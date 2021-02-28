@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PLM Validation</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+   <h1>Register</h1>
+    <% messages.forEach(message => {%>
+        <p><%= message.msg %></p>
+        <p><%= typeof message !== 'object' ? message : ''  %></p>
+        <p><%= typeof message.name !== 'undefined' ? message.name : ''  %></p>
+        <p><%= typeof message.message !== 'undefined' ? message.message : ''  %></p>
+    <% }) %>
+    <%#- messagesApp('my_message_template', locals) %>
+   <form action="/register" method="post">
+    <input type="email" name="email" placeholder="cavita970@gmail.com">
+    <input type="password" name="password" placeholder="password">
+    <button>Register</button>
+  </form>
+  <br />
+  <h1>Login</h1>
+   <form action="/login" method="post">
+    <input type="email" name="email" placeholder="cavita970@gmail.com">
+    <input type="password" name="password" placeholder="password">
+    <button>Login</button>
+  </form>
+  </body>
+</html>
